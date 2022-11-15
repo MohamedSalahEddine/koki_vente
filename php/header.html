@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/header.css" rel="stylesheet">
+    <script src="../js/header.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_top" >
+            <div class="div_logo">
+                <a href="index.php"><img src="../images/logo.png" alt="logo" class="logo"></a>
+            </div>
+            <div class="div_nav">
+                <ul class="div_nav_ul">
+                    <li id="beginner_btn"onmouseover="display('beginner_div')">Beginner ?</li>
+                    <li id="classes_btn" onmouseover="display('classes_div')">Classes</li>
+                    <li id="teacher_btn" onmouseover="display('teacher_div')">The teacher</li>
+                    <li id="contact_btn" onmouseover="display('contact_div')">Contact (DM)</li>
+                </ul>
+            </div>
+            <div class="div_auth">
+                <ul class="div_auth_ul">
+                    <li><a href="sign_in.php">login</a></li>
+                    <li class="separator"><a>|</a></li>
+                    <li><a href="sign_up.php">sign_up</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container_bottom" >
+            <div id="beginner_div" class="divs" onmouseout="hide(this)">
+                i am a beginner Hagar
+            </div>
+            <div id="classes_div" class="divs" onmouseout="hide(this)">
+                the classes that we have 
+            </div>
+            <div id="teacher_div" class="divs" onmouseout="hide(this)">
+                all the info about the teacherrr
+            </div>
+            <div id="contact_div" class="divs" onmouseout="hide(this)">
+                all the social media and sockets to this site
+            </div>
+        </div>
+    </div>
+</body>
+</html>
