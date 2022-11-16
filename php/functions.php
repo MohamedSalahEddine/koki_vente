@@ -29,4 +29,28 @@
         return $data;
     }
 
+    function getPosts($connection){
+        $sql = "select * from student inner join posts on student.id=posts.user_id";
+        $result=mysqli_query($connection, $sql);
+        $data = mysqli_fetch_all($result);
+        foreach($data as $d){
+             displayPost($d[1],$d[2], $d[10], $d[9], $d[11]);
+            
+        }
+    }
+
+
+
+    function displayPost($first_name, $last_name, $date, $text, $img){
+        $str = "
+            <div class='post'>
+                <span id='user_name'>$first_name $last_name</span>
+                <span id='post_date'>$date</span>
+                <textarea readonly id='post_content'>$text</textarea>
+                <img src='$img' alt='$first_name'/>
+            </div>
+        ";
+        echo $str;
+    }
+
 ?>
