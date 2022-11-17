@@ -5,7 +5,7 @@
     function get_emails($connection){
         $i=0;
         $emails_list=[];
-        $sql = "select email from student";
+        $sql = "select email from users";
         $email_result = mysqli_query($connection, $sql);
         $emails = mysqli_fetch_all($email_result);
         foreach($emails as $key => $value){
@@ -23,14 +23,14 @@
     }
     function authentify($email, $password, $connection){
         $hached_password = sha1($password);
-        $sql = "select first_name, last_name, email, password, sign_up_date, wallet from student where email = '$email' and password='$hached_password'";
+        $sql = "select first_name, last_name, email, password, sign_up_date, role from student where email = '$email' and password='$hached_password'";
         $result=mysqli_query($connection, $sql);
         $data = mysqli_fetch_assoc($result);
         return $data;
     }
 
     function getPosts($connection){
-        $sql = "select * from student inner join posts on student.id=posts.user_id";
+        $sql = "select * from users inner join posts on users.id=posts.user_id";
         $result=mysqli_query($connection, $sql);
         $data = mysqli_fetch_all($result);
         foreach($data as $d){
@@ -47,7 +47,7 @@
                 <span id='user_name'>$first_name $last_name</span>
                 <span id='post_date'>$date</span>
                 <textarea readonly id='post_content'>$text</textarea>
-                <img src='$img' alt='$first_name'/>
+                <img src='../images/$img' alt='$img'/>
             </div>
         ";
         echo $str;

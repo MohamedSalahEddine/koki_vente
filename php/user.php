@@ -1,11 +1,11 @@
 <?php
-    class Student{
+    class User{
         public $first_name;
         public $last_name;
         public $email;
         public $password;
         public $sign_up_date;
-        public $wallet;
+        public $role;
 
         function __construct($arr){
             $this->first_name=$arr[0];
@@ -13,7 +13,7 @@
             $this->email=$arr[2];
             $this->password=$arr[3];
             $this->sign_up_date=$arr[4];
-            $this->wallet=$arr[5];
+            $this->role=$arr[5];
         }
 
         function get_first_name(){
@@ -31,8 +31,8 @@
         function get_sign_up_date(){
             return $this->sign_up_date;
         }
-        function get_wallet(){
-            return $this->wallet;
+        function get_role(){
+            return $this->role;
         }
 
 

@@ -25,7 +25,7 @@
               echo "<h1><mark>Please make sure the two passwords are indettical!</mark><h1>";
               header('Refresh: 3; url=sign_up.php');
             }else{
-              $stmt = $connection->prepare("INSERT INTO student(first_name, last_name, email, password, sign_up_date, wallet) VALUES (?, ?, ?, ?, NOW(), 0.0)");
+              $stmt = $connection->prepare("INSERT INTO users(first_name, last_name, email, password, sign_up_date, role) VALUES (?, ?, ?, ?, NOW(), 'guest')");
               $stmt->bind_param("ssss", $first_name, $last_name, $email, $psw_hached);
               $stmt->execute();
               header('Location: index.php');

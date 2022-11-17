@@ -1,7 +1,7 @@
 <?php
     include('connection.php');
     include('functions.php');
-    include('student.php');
+    include('user.php');
 
     if( isset($_POST['email']) && 
         isset($_POST['psw'])){

@@ -14,9 +14,16 @@
 <body>
     <?php include_once('header.php');?>
     <main>
-        <?php
-            getPosts($connection);
-        ?>
+        <div class="div_main_left">
+            <?php
+                getPosts($connection);
+            ?>
+        </div>
+        <div class="div_main_right">
+            <form action="#" method="POST">
+                <input type="text" >
+            </form>
+        </div>
     </main>
     <?php include_once('footer.php');?>
 </body>
